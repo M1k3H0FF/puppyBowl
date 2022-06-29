@@ -11,13 +11,18 @@ export const fetchAllPlayers = async () => {
         if (result.error) throw result.error;
         return result.data.players;
     } catch (err) {
-        console.error('Uh oh, trpuble fetching players!', err);
+        console.error('Uh oh, trouble fetching players!', err);
     }
 
 };
 
 export const fetchSinglePlayer = async (playerId) => {
-
+    try {
+        const data  = await fetch(`/api/${cohortName}/players/${playerId}`);
+        return data;
+    } catch (err) {
+        console.log(error);
+    }
 };
 
 export const addNewPlayer = async (playerObj) => {
