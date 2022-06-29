@@ -21,7 +21,7 @@ export const fetchSinglePlayer = async (playerId) => {
         const data  = await fetch(`/api/${cohortName}/players/${playerId}`);
         return data;
     } catch (err) {
-        console.log(error);
+        console.log('error', err);
     }
 };
 
